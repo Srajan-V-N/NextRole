@@ -1,22 +1,10 @@
 # NextRole — AI Career Platform
 
-![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
-![Flask](https://img.shields.io/badge/Flask-3.0.3-lightgrey)
-![React](https://img.shields.io/badge/React-18-61DAFB)
-![Vite](https://img.shields.io/badge/Vite-5.3-646CFF)
-![MongoDB](https://img.shields.io/badge/MongoDB-6%2B-47A248)
-![Gemini](https://img.shields.io/badge/AI-Gemini%202.5%20Flash-4285F4)
-![License](https://img.shields.io/badge/License-MIT-green)
-
-NextRole is an AI-powered career intelligence platform that unifies resume optimization, ATS analysis, interview preparation, job discovery, skill-gap analysis, learning recommendations, and application tracking into a single placement-readiness system.
-
----
-
 ## Overview
 
-Traditional career preparation tools solve isolated problems — resume building, interview prep, or job discovery — separately. NextRole unifies the entire placement journey into one integrated ecosystem.
+**NextRole** is an AI-powered career intelligence and placement preparation platform that unifies resume optimization, ATS analysis, interview preparation, job discovery, skill-gap analysis, learning recommendations, and application tracking into a single placement-readiness ecosystem.
 
-The platform helps users understand:
+The platform integrates the complete placement journey into one intelligent system, helping users understand:
 
 - Where they currently stand
 - What skills they are missing
