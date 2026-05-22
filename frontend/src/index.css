@@ -1,0 +1,224 @@
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+@import '@fontsource/inter/600.css';
+@import '@fontsource/inter/700.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply font-sans text-light-text transition-colors duration-200;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    /* Light mode equivalent of your dark gradient */
+    background:
+    linear-gradient(
+    145deg,
+    #F5FFFD 0%,
+    #F5FFFD 58%,
+    #F0FCF9 78%,
+    #E6F8F4 100%
+    );
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+
+  .dark body {
+    @apply text-dark-text;
+    background: #00110F;
+    background-attachment: fixed;
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply rounded-full;
+    background: rgba(0,213,185,0.15);
+  }
+  .dark ::-webkit-scrollbar-thumb {
+    background: rgba(0,213,185,0.12);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(0,213,185,0.30);
+  }
+
+  /* Date input calendar icon */
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(0.4);
+    cursor: pointer;
+  }
+  .dark input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(0.7);
+  }
+
+  /* Focus styles */
+  *:focus-visible {
+    outline: 2px solid #00D5B9;
+    outline-offset: 2px;
+    border-radius: 6px;
+  }
+
+  /* Selection color */
+  ::selection {
+    background: rgba(0, 213, 185, 0.18);
+    color: inherit;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-white dark:bg-dark-surface border border-light-border dark:border-dark-border rounded-3xl shadow-card;
+  }
+
+  .card-hover {
+    @apply card transition-all duration-300 hover:-translate-y-0.5 hover:shadow-card-hover hover:border-brand/30;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-2xl
+           bg-brand text-white font-semibold text-sm
+           hover:bg-brand-hover active:scale-[0.97]
+           transition-all duration-150 cursor-pointer select-none
+           shadow-sm;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-2xl
+           bg-white dark:bg-dark-surface text-light-text dark:text-dark-text font-medium text-sm
+           border border-light-border dark:border-dark-border
+           hover:bg-light-subtle dark:hover:bg-dark-subtle active:scale-[0.97]
+           transition-all duration-150 cursor-pointer select-none;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 px-3 py-2 rounded-xl
+           text-light-muted dark:text-dark-muted font-medium text-sm
+           hover:bg-light-subtle dark:hover:bg-dark-subtle hover:text-light-text dark:hover:text-dark-text
+           transition-all duration-150 cursor-pointer;
+  }
+
+  .input-base {
+    @apply w-full px-3.5 py-2.5 rounded-2xl text-sm
+           bg-white dark:bg-dark-surface text-light-text dark:text-dark-text
+           border border-light-border dark:border-dark-border
+           placeholder:text-light-muted dark:placeholder:text-dark-muted
+           focus:outline-none focus:border-brand focus:ring-2 focus:ring-brand/20
+           transition-all duration-150;
+  }
+
+  .label {
+    @apply block text-[11px] font-semibold text-light-muted dark:text-dark-muted mb-1.5 tracking-wide uppercase;
+  }
+
+  .section-title {
+    @apply text-xl font-bold text-light-text dark:text-dark-text tracking-tight;
+  }
+
+  .section-header {
+    @apply text-[11px] font-semibold text-light-muted dark:text-dark-muted uppercase tracking-wider;
+  }
+
+  .text-muted {
+    @apply text-light-muted dark:text-dark-muted;
+  }
+
+  .page-bg {
+    background: transparent;
+  }
+
+  .score-ring {
+    @apply relative inline-flex items-center justify-center;
+  }
+
+  .skill-tag {
+    @apply inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-medium
+           bg-light-subtle dark:bg-dark-subtle
+           text-light-muted dark:text-dark-muted
+           border border-light-border dark:border-dark-border;
+  }
+
+  .skill-tag-match {
+    @apply inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-medium
+           bg-brand/10 text-brand border border-brand/20;
+  }
+
+  .skill-tag-missing {
+    @apply inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-medium
+           bg-error/10 text-error border border-error/20;
+  }
+
+  .badge {
+    @apply inline-flex items-center gap-1 px-2 py-0.5 rounded-lg text-[11px] font-semibold;
+  }
+
+  .badge-success {
+    @apply badge bg-success/10 text-success;
+  }
+
+  .badge-warning {
+    @apply badge bg-warning/10 text-warning;
+  }
+
+  .badge-error {
+    @apply badge bg-error/10 text-error;
+  }
+
+  .badge-brand {
+    @apply badge bg-brand/10 text-brand;
+  }
+
+  .badge-neutral {
+    @apply badge bg-light-subtle dark:bg-dark-subtle text-light-muted dark:text-dark-muted;
+  }
+}
+
+/* Print styles for resume export */
+@media print {
+  @page {
+    size: A4;
+    margin: 0;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  body {
+    background: white !important;
+    color: black !important;
+    margin: 0;
+    padding: 0;
+  }
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .resume-print {
+    display: block !important;
+    width: 210mm;
+    max-width: 210mm;
+    height: auto !important;
+    min-height: unset !important;
+    margin: 0;
+    font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  }
+}

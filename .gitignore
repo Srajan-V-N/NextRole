@@ -1,0 +1,34 @@
+# Claude Code workspace
+.claude/
+
+# Project notes
+Prompt.md
+
+# Python
+backend/venv/
+backend/__pycache__/
+backend/app/__pycache__/
+backend/app/routes/__pycache__/
+backend/app/services/__pycache__/
+backend/app/utils/__pycache__/
+**/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Environment variables
+backend/.env
+frontend/.env
+
+# Uploaded resume files
+backend/uploads/
+
+# Node.js
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# OS
+.DS_Store
+Thumbs.db
